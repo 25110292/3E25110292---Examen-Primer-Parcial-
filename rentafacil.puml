@@ -1,0 +1,99 @@
+@startuml
+class Marca
+class Moto{
+
+    - Anodefabricacion fabricacion 
+    -Precio Precio
+    -NumeroPlaca placa 
+    -Marca marca 
+    -Modelo modelo 
+    - Cilindrada cilindrada 
+
+}
+class Camioneta{
+
+    - Anodefabricacion fabricacion 
+    -Precio Precio
+    -NumeroPlaca placa 
+    -Marca marca 
+    -Modelo modelo 
+    - Carga carga 
+
+}
+class Auto {
+
+    - Anodefabricacion fabricacion 
+    -Precio Precio
+    -NumeroPlaca placa 
+    -Marca marca 
+    -Modelo modelo 
+
+}
+class NumeroPlaca
+class Anodefabricacion 
+class Cliente {
+
+    -Codigo codigo
+    - Id id 
+    - Nombre nombre
+    - Telefono telefono 
+    + Vehiculo : Traspotar(mover)
+}
+class Id 
+class Nombre 
+class Telefono
+class Fechainicio
+class Fechafinal
+class Estado
+class Codigo
+class Modelo 
+class Carga 
+class Cilindrada
+class Tipodevehiculo 
+class Vehiculo
+class Alquiler{
+     - Estado estado 
+     - Fechafinal fechafinal
+     - Fechainicio fechainicio 
+     - Codigo codigo 
+     - Costo costo 
+     - Tipodevehiculo tipodevehiculo
+
+} 
+class Costo 
+class Precio
+
+Cliente *-- Codigo 
+Cliente o-- "1,2,3"Vehiculo
+Cliente *-- Id
+Cliente *-- Nombre 
+Cliente *-- Telefono
+Alquiler *-- Estado
+Alquiler *-- Fechainicio
+Alquiler *-- Fechafinal
+Alquiler *-- Codigo
+Alquiler *-- Costo
+Alquiler *-- Tipodevehiculo 
+Vehiculo --|> Moto
+Vehiculo --|> Camioneta
+Vehiculo --|> Auto 
+Camioneta *-- Carga 
+Moto *-- Cilindrada
+Camioneta *-- NumeroPlaca
+Camioneta *-- Marca
+Camioneta *-- Modelo
+Camioneta *-- Anodefabricacion
+Camioneta *-- Precio
+Moto *-- NumeroPlaca
+Moto *--Marca
+Moto *-- Modelo
+Moto *-- Anodefabricacion
+Moto*-- Precio
+Auto *-- NumeroPlaca
+Auto *-- Marca
+Auto *-- Modelo
+Auto *-- Anodefabricacion
+Auto  *-- Precio
+
+
+@enduml
